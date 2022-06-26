@@ -6,14 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GildedRoseTest {
     @Test
-    void 
-
-    @Test
     void qualityNeverNegative() {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(app.items[0].quality, 0);
+        assertEquals(0, app.items[0].quality);
     }
 
     @Test
@@ -21,9 +18,10 @@ class GildedRoseTest {
         Item[] items = new Item[] { new Item("foo", 1, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(app.items[0].quality, 9);
+        assertEquals(9, app.items[0].quality);
+
         app.updateQuality();
-        assertEquals(app.items[0].quality, 7);
+        assertEquals(7, app.items[0].quality);
     }
 
     @Test
@@ -39,7 +37,7 @@ class GildedRoseTest {
         Item[] items = new Item[] { new Item("Aged Brie", 1, 50) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals(app.items[0].quality, 50);
+        assertEquals(50, app.items[0].quality);
     }
 
     @Test
